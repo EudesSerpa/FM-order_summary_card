@@ -214,6 +214,10 @@ body {
   gap: 1.2rem;
 }
 
+.order__title {
+  font-size: 1rem;
+}
+
 .order__icon[data-icon="music"]::after {
   content: url(./images/icon-music.svg);
   width: 48px;
