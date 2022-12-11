@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+:root {
+  /* Colors */
+  /* Primary */
+  --pale-blue: hsl(225, 100%, 94%);
+  --bright-blue: hsl(245, 75%, 52%);
+  
+  --pale-blue-light: hsla(224, 32%, 76%, 0.095);
+  --bright-blue-shadow: hsla(245, 75%, 52%, .2);
+  --bright-blue-hover: hsla(245, 75%, 52%, .65);
+
+  /* Neutral */
+  --very-pale-blue: hsl(225, 100%, 98%);
+  --desaturated-blue: hsl(224, 23%, 55%);
+  --dark-blue: hsl(223, 47%, 23%);
+
+  /* Typography */
+  --ff-main: 'Red Hat Display', sans-serif;
+  --fs-base: 1rem;
+  --fw-extra-bold: 900;
+  --fw-bold: 700;
+  --fw-medium: 500;
+
+  /* Border */
+  --bdr-radius: 1.2rem;
+}
+
+/* Code from: https://www.joshwcomeau.com/css/custom-css-reset/ */
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* General styles */
+body {
+  --background-pattern-scale: 100% 25%;
+  --background-pattern-image: url(./images/pattern-background-mobile.svg);
+  
+  display: grid;
+  place-content: center;
+  margin: 1rem;
+  font: var(--fw-medium) var(--fs-base) var(--ff-main);
+  color: var(--desaturated-blue);
+  background-color: var(--pale-blue);
+  background: repeat-x top/var(--background-pattern-scale) var(--background-pattern-image), var(--pale-blue) ;
+}
+
+.btn {
+  padding: .7rem 1.5rem;
+  border: none;
+  font-weight: var(--fw-bold);
+  background-color: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.btn--primary {
+  border-radius: calc(var(--bdr-radius) / 2);
+  color: var(--pale-blue);
+  background-color: var(--bright-blue);
+  box-shadow: 0 .9rem 1rem var(--bright-blue-shadow);
+}
+
+.btn--primary:is(:hover, :focus-visible) {
+  background-color: var(--bright-blue-hover);
+}
+
+.btn--secondary, 
+.title {
+  font-weight: var(--fw-extra-bold);
+}
+
+.title,
+.btn--secondary:is(:hover, :focus-visible) {
+  color: var(--dark-blue);  
+}
+
+/* Utilities */
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.flex-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .75rem;
+}
+
+.icon-rounded {
+  border-radius: 50%;
+}
+
+/* Card */
+.card {
+  --content-spacing: 1rem;
+  --content-padding: 1.5rem;
+
+  width: min(340px, 100%);
+  margin-inline: auto;
+  border-radius: var(--bdr-radius);
+  background-color: var(--very-pale-blue);
+  box-shadow: 0   .7rem .7rem var(--bright-blue-shadow);
+  text-align: center;
+  overflow: hidden;
+}
+
+.card__content,
+.card__footer {
+  display: grid;
+  gap: var(--content-spacing);
+}
+
+.card__content {
+  padding: var(--content-padding) var(--content-padding) 1rem;
+}
+
+.card__text {
+  padding-inline: .5rem;
+  line-height: 1.6;
+}
+
+/* Order */
+.order {
+  justify-content: space-between;
+  padding: 1rem 1rem .8rem;
+  font-size: .95rem;
+  border-radius: calc(var(--bdr-radius) / 2);
+  background-color: var(--pale-blue-light);
+  text-align: initial;
+  line-height: 1.4;
+}
+
+.order__header  {
+  gap: 1.2rem;
+}
+
+.order__icon[data-icon="music"]::after {
+  content: url(./images/icon-music.svg);
+  width: 48px;
+  aspect-ratio: 1;  
+}
+
+.order__link {
+  font-size: .8rem;
+  font-weight: var(--fw-extra-bold);
+  color: var(--bright-blue)
+}
+
+.order__link:is(:hover, :focus-visible) {
+  color: var(--bright-blue-hover);
+  text-decoration: none;
+}
+
+/* Attribution */
+.attribution {
+  margin-block: 1rem;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* Media queries */
+@media screen and (min-width: 940px) {
+  body {
+    --background-pattern-scale: 100% 50%;
+    --background-pattern-image: url(./images/pattern-background-desktop.svg);
+  }
+}
