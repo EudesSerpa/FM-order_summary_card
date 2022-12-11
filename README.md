@@ -27,7 +27,7 @@ Users should be able to:
 
 ### Links
 
-- Repository URL: [Github](https://your-solution-url.com).
+- Repository URL: [Github](https://github.com/EudesSerpa/FM-order_summary_card).
 - Live Site URL: [See demo](https://your-live-site-url.com).
 
 ## My process
