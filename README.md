@@ -28,7 +28,7 @@ Users should be able to:
 ### Links
 
 - Repository URL: [Github](https://github.com/EudesSerpa/FM-order_summary_card).
-- Live Site URL: [See demo](https://your-live-site-url.com).
+- Live Site URL: [See demo](https://fm-order-card.netlify.app/).
 
 ## My process
 
